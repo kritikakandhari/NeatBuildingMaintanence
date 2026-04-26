@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 
-// Import generated images (using absolute paths as they are in the artifacts dir)
+// Import generated images
 const springHero = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/spring_cleaning_hero_1777154145356.png";
 const commercialHero = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/cleaner_hero_1777146817848.png";
 const constructionHero = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/black_shirt_cleaner_1777147153776.png";
 const carpetHero = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/black_cap_cleaner_1777149349659.png";
 const sprayHand1 = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/pure_white_spray_hand_1777150420144.png";
-const sprayHand2 = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/spray_hand_1777149990360.png";
 
 export const blogPosts = [
   {
@@ -24,7 +23,7 @@ export const blogPosts = [
     featured: true,
     contentImages: [
       sprayHand1,
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800&auto=format&fit=crop"
     ]
   },
   {
@@ -37,7 +36,7 @@ export const blogPosts = [
     image: commercialHero,
     contentImages: [
       "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop"
     ]
   },
   {
@@ -47,7 +46,7 @@ export const blogPosts = [
     category: "Eco-Friendly",
     date: "March 15, 2026",
     readTime: "4 min read",
-    image: sprayHand2,
+    image: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?q=80&w=800&auto=format&fit=crop",
     contentImages: [
       "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1603912627214-9011de55a044?q=80&w=800&auto=format&fit=crop"
@@ -62,7 +61,7 @@ export const blogPosts = [
     readTime: "6 min read",
     image: constructionHero,
     contentImages: [
-      "https://images.unsplash.com/photo-1621905252507-b35242f8969d?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505798577917-a65157d3320a?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop"
     ]
   },
@@ -76,7 +75,7 @@ export const blogPosts = [
     image: carpetHero,
     contentImages: [
       "https://images.unsplash.com/photo-1517646280104-aa29dc563e41?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1559445368-e4b9d0337424?q=80&w=800&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop"
     ]
   }
 ];

@@ -87,6 +87,16 @@ const Services = () => {
                   className="w-full h-full object-cover" 
                   style={{ mixBlendMode: 'multiply', objectPosition: 'top' }} 
                 />
+                
+                {/* Spray Hand Overlay */}
+                <motion.img 
+                  src="/spray-hand.png"
+                  alt="Spray Hand"
+                  initial={{ opacity: 0, x: 20, rotate: 10 }}
+                  animate={{ opacity: 1, x: 0, rotate: 0 }}
+                  transition={{ delay: 1, duration: 0.8 }}
+                  className="absolute bottom-10 right-0 w-48 h-auto pointer-events-none drop-shadow-2xl z-20"
+                />
               </div>
             </motion.div>
 
