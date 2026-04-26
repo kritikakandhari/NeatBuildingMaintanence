@@ -5,12 +5,13 @@ import { ArrowRight } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 
 // Import generated images
-// Use locally saved generated images
-const springHero = "/blog/spring.png";
-const commercialHero = "/blog/commercial.png";
-const constructionHero = "/blog/construction.png";
-const carpetHero = "/blog/carpet.png";
-const ecoHero = "/blog/eco.png";
+// Use high-quality real photos for a professional, logo-free look
+const springHero = "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=1200&auto=format&fit=crop";
+const commercialHero = "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop";
+const constructionHero = "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop";
+const carpetHero = "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop";
+const ecoHero = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop";
+
 
 
 export const blogPosts = [
