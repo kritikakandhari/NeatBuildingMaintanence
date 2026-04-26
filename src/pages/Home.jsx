@@ -75,20 +75,31 @@ const Home = () => {
         </motion.div>
       </section>
       
-      {/* Trust Stats Banner */}
-      <section className="py-12 bg-primary overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <StatItem number="10k+" label="Cleanings Completed" />
-            <StatItem number="500+" label="Happy Clients" />
-            <StatItem number="150+" label="Verified Cleaners" />
-            <StatItem number="4.9/5" label="Average Rating" />
-          </div>
+      {/* Moving Brand Values Banner */}
+      <section className="py-10 bg-primary overflow-hidden relative">
+        <div className="flex whitespace-nowrap">
+          <motion.div 
+            animate={{ x: [0, -1000] }}
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+            className="flex items-center gap-16 px-8"
+          >
+            <MarqueeItem text="Eco-Friendly Products" />
+            <MarqueeItem text="Fully Insured & Vetted" />
+            <MarqueeItem text="Satisfaction Guaranteed" />
+            <MarqueeItem text="Pet-Friendly Cleaning" />
+            <MarqueeItem text="Customizable Plans" />
+            <MarqueeItem text="Professional Equipment" />
+            {/* Duplicate for seamless loop */}
+            <MarqueeItem text="Eco-Friendly Products" />
+            <MarqueeItem text="Fully Insured & Vetted" />
+            <MarqueeItem text="Satisfaction Guaranteed" />
+            <MarqueeItem text="Pet-Friendly Cleaning" />
+            <MarqueeItem text="Customizable Plans" />
+            <MarqueeItem text="Professional Equipment" />
+          </motion.div>
         </div>
       </section>
+
 
 
       {/* Features Section */}
@@ -335,16 +346,12 @@ const ScrollQuote = () => {
     </section>
   );
 };
-const StatItem = ({ number, label }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="text-center"
-  >
-    <div className="text-3xl md:text-4xl font-black text-secondary mb-1">{number}</div>
-    <div className="text-white/70 text-sm font-bold uppercase tracking-wider">{label}</div>
-  </motion.div>
+const MarqueeItem = ({ text }) => (
+  <div className="flex items-center gap-4">
+    <div className="w-2 h-2 rounded-full bg-secondary"></div>
+    <span className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter">{text}</span>
+  </div>
 );
+
 
 export default Home;
