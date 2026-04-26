@@ -126,58 +126,73 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
-
-        {/* Dynamic Image Grid */}
-        <section className="py-32 overflow-hidden">
+        </section>        {/* Service Standards Section */}
+        <section className="py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-              <div className="md:col-span-8">
-                <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-xl group">
-                  <img 
-                    src="/blog/spring.png" 
-                    alt="Our experts" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent flex items-end p-12">
-                    <h3 className="text-3xl font-black text-white">The Expertise You Deserve.</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-black text-dark mb-8 tracking-tighter">Our Quality Standards</h2>
+                <div className="space-y-8">
+                  {[
+                    { 
+                      title: "Hospital-Grade Sanitization", 
+                      desc: "We use high-level disinfectants that eliminate 99.9% of bacteria and viruses, ensuring a safe environment.",
+                      icon: <Shield className="w-6 h-6 text-primary" />
+                    },
+                    { 
+                      title: "Eco-Friendly Products", 
+                      desc: "Our cleaning solutions are biodegradable and non-toxic, safe for pets, children, and the planet.",
+                      icon: <Leaf className="w-6 h-6 text-primary" />
+                    },
+                    { 
+                      title: "Advanced HEPA Filtration", 
+                      desc: "Our vacuums are equipped with HEPA filters that capture fine dust and allergens, improving indoor air quality.",
+                      icon: <Sparkles className="w-6 h-6 text-primary" />
+                    }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex gap-6 p-6 rounded-3xl bg-gray-50 border border-gray-100">
+                      <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm flex-shrink-0">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-black text-dark mb-2">{item.title}</h4>
+                        <p className="text-gray-500 font-medium leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="relative">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-4">
+                    <img src="/blog/spring.png" alt="Cleaning detail" className="rounded-[2.5rem] h-64 w-full object-cover shadow-xl" />
+                    <img src="/blog/construction.png" alt="Equipment" className="rounded-[2.5rem] h-48 w-full object-cover shadow-xl" />
+                  </div>
+                  <div className="space-y-4 pt-12">
+                    <img src="/blog/carpet.png" alt="Professional staff" className="rounded-[2.5rem] h-48 w-full object-cover shadow-xl" />
+                    <img src="/blog/commercial.png" alt="Finished space" className="rounded-[2.5rem] h-64 w-full object-cover shadow-xl" />
                   </div>
                 </div>
               </div>
-              <div className="md:col-span-4">
-                <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-xl group">
-                  <img 
-                    src="/blog/construction.png" 
-                    alt="Cleaning detail" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-              </div>
-              <div className="md:col-span-4">
-                <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-xl group">
-                  <img 
-                    src="/blog/carpet.png" 
-                    alt="Office cleaning" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-              </div>
+            </div>
 
-              <div className="md:col-span-8 text-center bg-primary rounded-[3rem] p-12 flex flex-col justify-center items-center">
-                <h3 className="text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
-                  Ready to experience <br /> the Neat difference?
-                </h3>
-                <motion.button 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-primary px-10 py-4 rounded-full font-black shadow-2xl hover:shadow-primary/30 transition-all"
-                >
-                  Contact Us Today
-                </motion.button>
-              </div>
+            {/* Final CTA */}
+            <div className="bg-primary rounded-[4rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-primary/20">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+              <h3 className="text-3xl md:text-5xl font-black text-white mb-8 leading-tight relative z-10">
+                A cleaner space is just <br /> a conversation away.
+              </h3>
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-primary px-12 py-5 rounded-full font-black text-lg shadow-xl relative z-10"
+              >
+                Get a Free Quote
+              </motion.button>
             </div>
           </div>
         </section>
+n>
 
       </div>
     </PageTransition>
