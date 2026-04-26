@@ -5,11 +5,12 @@ import { ArrowRight } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 
 // Import generated images
-const springHero = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/spring_cleaning_hero_1777154145356.png";
-const commercialHero = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/cleaner_hero_1777146817848.png";
-const constructionHero = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/black_shirt_cleaner_1777147153776.png";
-const carpetHero = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/black_cap_cleaner_1777149349659.png";
-const sprayHand1 = "file:///C:/Users/Kritika Kandhari/.gemini/antigravity/brain/29e67659-8b45-4fa8-9c60-cd8963257b9a/pure_white_spray_hand_1777150420144.png";
+// Use Unsplash images for reliability
+const springHero = "https://images.unsplash.com/photo-1584820923423-8f15b18d4d51?q=80&w=1200&auto=format&fit=crop";
+const commercialHero = "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop";
+const constructionHero = "https://images.unsplash.com/photo-1505798577917-a65157d3320a?q=80&w=1200&auto=format&fit=crop";
+const carpetHero = "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop";
+const ecoHero = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop";
 
 export const blogPosts = [
   {
@@ -20,11 +21,7 @@ export const blogPosts = [
     date: "April 12, 2026",
     readTime: "5 min read",
     image: springHero,
-    featured: true,
-    contentImages: [
-      sprayHand1,
-      "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800&auto=format&fit=crop"
-    ]
+    featured: true
   },
   {
     id: "benefits-of-commercial-cleaning",
@@ -33,11 +30,7 @@ export const blogPosts = [
     category: "Commercial",
     date: "March 28, 2026",
     readTime: "7 min read",
-    image: commercialHero,
-    contentImages: [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop"
-    ]
+    image: commercialHero
   },
   {
     id: "eco-friendly-cleaning-products",
@@ -46,11 +39,7 @@ export const blogPosts = [
     category: "Eco-Friendly",
     date: "March 15, 2026",
     readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?q=80&w=800&auto=format&fit=crop",
-    contentImages: [
-      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1603912627214-9011de55a044?q=80&w=800&auto=format&fit=crop"
-    ]
+    image: ecoHero
   },
   {
     id: "post-construction-cleaning",
@@ -59,11 +48,7 @@ export const blogPosts = [
     category: "Residential",
     date: "February 20, 2026",
     readTime: "6 min read",
-    image: constructionHero,
-    contentImages: [
-      "https://images.unsplash.com/photo-1505798577917-a65157d3320a?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop"
-    ]
+    image: constructionHero
   },
   {
     id: "carpet-maintenance-secrets",
@@ -72,11 +57,7 @@ export const blogPosts = [
     category: "Maintenance",
     date: "February 10, 2026",
     readTime: "5 min read",
-    image: carpetHero,
-    contentImages: [
-      "https://images.unsplash.com/photo-1517646280104-aa29dc563e41?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop"
-    ]
+    image: carpetHero
   }
 ];
 
@@ -90,14 +71,15 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header */}
-          <div className="mb-20">
-            <h1 className="text-5xl md:text-7xl font-black text-dark mb-6 tracking-tighter">
+          <div className="mb-12 md:mb-20">
+            <h1 className="text-4xl md:text-7xl font-black text-dark mb-4 md:mb-6 tracking-tighter">
               Inside <span className="text-primary">Neat</span>
             </h1>
-            <p className="text-xl text-gray-500 max-w-2xl font-medium">
+            <p className="text-lg md:text-xl text-gray-500 max-w-2xl font-medium">
               Expert advice on maintenance, sustainability, and creating a healthier living environment.
             </p>
           </div>
+
 
           {/* Featured Post */}
           {featuredPost && (

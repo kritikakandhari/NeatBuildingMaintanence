@@ -39,9 +39,10 @@ const BlogPost = () => {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-black text-dark mb-10 leading-[1.1] tracking-tighter">
+            <h1 className="text-3xl md:text-6xl font-black text-dark mb-10 leading-[1.1] tracking-tighter">
               {post.title}
             </h1>
+
 
             <div className="pt-10 border-t border-gray-100">
               {/* Author removed as per request */}
