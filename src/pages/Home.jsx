@@ -201,46 +201,44 @@ const Home = () => {
             ].map((step, index) => (
               <motion.div 
                 key={step.id}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial="initial"
+                whileHover="hover"
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-4 md:gap-8 relative group cursor-pointer"
+                className="flex items-start gap-4 md:gap-8 relative cursor-pointer"
               >
                 {/* Process Circle */}
                 <div className="relative flex-shrink-0">
                   <motion.div 
-                    whileHover={{ 
-                      scale: 1.05,
-                      backgroundColor: "#1eb882",
-                      borderColor: "#1eb882"
+                    variants={{
+                      initial: { backgroundColor: "#f9fafb", borderColor: "#f3f4f6", color: "#9ca3af" },
+                      hover: { backgroundColor: "#1eb882", borderColor: "#1eb882", color: "#ffffff", scale: 1.05 }
                     }}
-                    transition={{ duration: 0.2 }}
-                    className="w-14 h-14 md:w-18 md:h-18 rounded-full bg-gray-50 flex items-center justify-center border-2 border-gray-100 shadow-sm transition-colors group"
+                    transition={{ duration: 0.3 }}
+                    className="w-14 h-14 md:w-18 md:h-18 rounded-full flex items-center justify-center border-2 shadow-sm font-black text-lg"
                   >
-                    <motion.span 
-                      variants={{
-                        hover: { color: "#ffffff" }
-                      }}
-                      className="text-lg font-black text-gray-400 group-hover:text-white transition-colors"
-                    >
-                      {step.id}
-                    </motion.span>
+                    {step.id}
                   </motion.div>
                 </div>
 
-
                 {/* Text Content */}
                 <div className="pt-2 md:pt-4">
-                  <h3 className="text-xl md:text-2xl font-black text-dark mb-1 group-hover:text-[#1eb882] transition-colors leading-tight">
+                  <motion.h3 
+                    variants={{
+                      initial: { color: "#0f2c59" },
+                      hover: { color: "#1eb882" }
+                    }}
+                    className="text-xl md:text-2xl font-black mb-1 leading-tight"
+                  >
                     {step.title}
-                  </h3>
+                  </motion.h3>
                   <p className="text-sm md:text-base text-gray-500 leading-snug max-w-lg">
                     {step.desc}
                   </p>
                 </div>
               </motion.div>
             ))}
+
           </div>
         </div>
       </section>
