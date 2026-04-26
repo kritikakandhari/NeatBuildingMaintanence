@@ -179,38 +179,64 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-24 bg-dark text-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Simple Process</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">How Neat Maintenance Works</h2>
+      {/* How We Work Section - Vertical Timeline */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-black text-[#0f2c59] mb-6">How We Work With You</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              From understanding your needs to delivering a spotless space, our structured approach ensures precision and quality at every step.
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-            <div className="hidden md:block absolute top-12 left-1/6 right-1/6 h-[2px] bg-white/10"></div>
+          <div className="relative space-y-12">
+            {/* Vertical Line */}
+            <div className="absolute left-10 md:left-12 top-10 bottom-10 w-[2px] bg-gray-100 hidden sm:block"></div>
             
-            <ProcessStep 
-              number="01"
-              title="Book Online"
-              desc="Select your service, choose a convenient time, and get an instant quote in minutes."
-              delay={0.1}
-            />
-            <ProcessStep 
-              number="02"
-              title="We Clean"
-              desc="Our vetted professionals arrive fully equipped to make your space spotless."
-              delay={0.2}
-            />
-            <ProcessStep 
-              number="03"
-              title="You Relax"
-              desc="Enjoy your pristine, healthy environment with zero stress and 100% satisfaction."
-              delay={0.3}
-            />
+            {[
+              { id: '01', title: 'Consultation', desc: 'We listen. A quick conversation to understand your space, priorities, and specific requirements.' },
+              { id: '02', title: 'Strategy', desc: 'Custom planning. We select the right team members and specialized equipment for your unique environment.' },
+              { id: '03', title: 'Delivery', desc: 'Precision execution. Our professionals carry out the service with meticulous attention to detail and care.' },
+              { id: '04', title: 'Quality Check', desc: 'Continuous excellence. We perform a final walkthrough to ensure every corner meets our "Neat" standard.' }
+            ].map((step, index) => (
+              <motion.div 
+                key={step.id}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="flex items-start gap-8 md:gap-12 relative group"
+              >
+                {/* Process Circle */}
+                <div className="relative flex-shrink-0">
+                  <motion.div 
+                    whileHover={{ scale: 1.1 }}
+                    className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-50 flex items-center justify-center border-2 border-gray-100 transition-all duration-500 group-hover:bg-primary/10 group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(30,184,130,0.2)]"
+                  >
+                    <span className="text-xl md:text-2xl font-black text-gray-400 group-hover:text-primary transition-colors">
+                      {step.id}
+                    </span>
+                  </motion.div>
+                  
+                  {/* Outer Pulsing Ring (Visible on Hover) */}
+                  <div className="absolute inset-0 rounded-full border-4 border-primary/20 scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse"></div>
+                </div>
+
+                {/* Text Content */}
+                <div className="pt-4 md:pt-6">
+                  <h3 className="text-2xl md:text-3xl font-black text-dark mb-3 group-hover:text-primary transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-lg text-gray-500 leading-relaxed max-w-xl">
+                    {step.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
+
 
       {/* Testimonials */}
       <section className="py-24 bg-light relative">
@@ -282,21 +308,8 @@ const FeatureCard = ({ icon, title, desc, delay }) => (
   </motion.div>
 );
 
-const ProcessStep = ({ number, title, desc, delay }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5, delay }}
-    className="relative z-10 flex flex-col items-center text-center"
-  >
-    <div className="w-24 h-24 rounded-full bg-secondary text-dark flex items-center justify-center text-3xl font-black mb-6 shadow-[0_0_30px_rgba(34,197,94,0.3)]">
-      {number}
-    </div>
-    <h3 className="text-2xl font-bold mb-3">{title}</h3>
-    <p className="text-gray-400">{desc}</p>
-  </motion.div>
-);
+
+
 
 const TestimonialCard = ({ name, role, text }) => (
   <motion.div 
