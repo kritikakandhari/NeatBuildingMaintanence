@@ -195,18 +195,24 @@ const BlogPost = () => {
 
           {/* Related Posts */}
           <div className="mt-32 pt-20 border-t border-gray-100">
-            <h3 className="text-3xl font-black text-dark mb-12 tracking-tight">More from Neat</h3>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <h3 className="text-3xl md:text-4xl font-black text-dark tracking-tight">More from Neat</h3>
+              <Link to="/blog" className="text-primary font-black flex items-center gap-2 hover:gap-4 transition-all group/see">
+                See all stories <ArrowRight className="w-5 h-5 transition-transform" />
+              </Link>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {blogPosts.filter(p => p.id !== post.id).slice(0, 2).map(p => (
                 <Link key={p.id} to={`/blog/${p.id}`} className="group">
-                  <div className="relative h-64 overflow-hidden rounded-[2rem] mb-6 shadow-md">
-                    <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="relative h-72 md:h-80 overflow-hidden rounded-[2.5rem] mb-6 shadow-xl border border-gray-100">
+                    <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
-                  <h4 className="text-2xl font-black text-dark group-hover:text-primary transition-colors leading-tight">{p.title}</h4>
+                  <h4 className="text-2xl font-black text-dark group-hover:text-primary transition-colors leading-tight tracking-tight">{p.title}</h4>
                 </Link>
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </PageTransition>
