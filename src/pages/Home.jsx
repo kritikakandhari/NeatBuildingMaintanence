@@ -202,12 +202,13 @@ const Home = () => {
               <motion.div 
                 key={step.id}
                 initial="initial"
+                whileInView="hover"
                 whileHover="hover"
-                whileTap="hover"
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.8 }}
                 transition={{ delay: index * 0.1 }}
                 className="flex items-start gap-4 md:gap-8 relative cursor-pointer"
               >
+
 
                 {/* Process Circle */}
                 <div className="relative flex-shrink-0">
