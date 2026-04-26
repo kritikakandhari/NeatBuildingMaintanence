@@ -88,15 +88,6 @@ const Services = () => {
                   style={{ mixBlendMode: 'multiply', objectPosition: 'top' }} 
                 />
                 
-                {/* Spray Hand Overlay */}
-                <motion.img 
-                  src="/spray-hand.png"
-                  alt="Spray Hand"
-                  initial={{ opacity: 0, x: 20, rotate: 10 }}
-                  animate={{ opacity: 1, x: 0, rotate: 0 }}
-                  transition={{ delay: 1, duration: 0.8 }}
-                  className="absolute bottom-10 right-0 w-48 h-auto pointer-events-none drop-shadow-2xl z-20"
-                />
               </div>
             </motion.div>
 
@@ -107,9 +98,22 @@ const Services = () => {
               transition={{ duration: 0.8 }}
               className="w-full lg:w-1/2 space-y-8 order-1 lg:order-2 text-center lg:text-left relative z-10"
             >
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#0f2c59] leading-[1.1] tracking-tight relative z-20">
-                Clean<br/>with open<br/>hearts <span className="inline-block text-blue-500">💙</span>
-              </h1>
+              <div className="relative inline-block">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#0f2c59] leading-[1.1] tracking-tight relative z-20">
+                  Clean<br/>with open<br/>hearts <span className="inline-block text-blue-500">💙</span>
+                </h1>
+                
+                {/* Spray Hand Overlay - Moved and Background Removed */}
+                <motion.img 
+                  src="/spray-hand.png"
+                  alt="Spray Hand"
+                  initial={{ opacity: 0, scale: 0.8, rotate: 20 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                  transition={{ delay: 1.2, duration: 0.8 }}
+                  className="absolute -top-10 -right-16 w-32 h-auto pointer-events-none z-30"
+                  style={{ mixBlendMode: 'multiply' }}
+                />
+              </div>
               <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium relative z-20">
                 The no-stress way to book the cleaning service you need in minutes. Eliminates back and forth emails. Explore the services below.
               </p>
