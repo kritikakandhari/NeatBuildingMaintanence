@@ -98,45 +98,9 @@ const Services = () => {
               transition={{ duration: 0.8 }}
               className="w-full lg:w-1/2 space-y-8 order-1 lg:order-2 text-center lg:text-left relative z-10"
             >
-              <div className="relative inline-block">
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#0f2c59] leading-[1.1] tracking-tight relative z-20">
-                  Clean<br/>with open<br/>hearts <span className="inline-block text-blue-500">💙</span>
-                </h1>
-                
-                {/* Spray Hand Overlay - Moved further right */}
-                <div className="absolute -top-20 -right-32 lg:-right-40 z-30">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8, rotate: 20 }}
-                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                    transition={{ delay: 1.2, duration: 0.8 }}
-                    className="relative"
-                  >
-                    <img 
-                      src="/spray-hand.png"
-                      alt="Spray Hand"
-                      className="w-32 h-auto pointer-events-none"
-                      style={{ mixBlendMode: 'multiply' }}
-                    />
-                    
-                    {/* Spray Particles */}
-                    <motion.div 
-                      animate={{ opacity: [0, 1, 0], x: [-10, -30], y: [0, -10] }}
-                      transition={{ repeat: Infinity, duration: 1.5, delay: 2 }}
-                      className="absolute top-4 left-0 w-2 h-2 bg-blue-400 rounded-full blur-[1px]"
-                    />
-                    <motion.div 
-                      animate={{ opacity: [0, 1, 0], x: [-15, -40], y: [5, 0] }}
-                      transition={{ repeat: Infinity, duration: 1.5, delay: 2.2 }}
-                      className="absolute top-8 left-2 w-1.5 h-1.5 bg-blue-300 rounded-full blur-[1px]"
-                    />
-                    <motion.div 
-                      animate={{ opacity: [0, 1, 0], x: [-5, -25], y: [-5, -15] }}
-                      transition={{ repeat: Infinity, duration: 1.5, delay: 2.4 }}
-                      className="absolute top-2 left-4 w-1 h-1 bg-blue-200 rounded-full blur-[1px]"
-                    />
-                  </motion.div>
-                </div>
-              </div>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#0f2c59] leading-[1.1] tracking-tight">
+                Clean<br/>with open<br/>hearts <span className="inline-block text-blue-500">💙</span>
+              </h1>
               <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium relative z-20">
                 The no-stress way to book the cleaning service you need in minutes. Eliminates back and forth emails. Explore the services below.
               </p>
@@ -154,6 +118,40 @@ const Services = () => {
             </motion.div>
             
           </div>
+        </div>
+
+        {/* Spray Hand Overlay - Fixed to the right edge of the screen */}
+        <div className="absolute top-40 right-0 z-30 pointer-events-none overflow-hidden hidden lg:block">
+          <motion.div
+            initial={{ opacity: 0, x: 100, rotate: 20 }}
+            animate={{ opacity: 1, x: 0, rotate: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="relative"
+          >
+            <img 
+              src="/spray-hand.png"
+              alt="Spray Hand"
+              className="w-40 h-auto"
+              style={{ mixBlendMode: 'multiply' }}
+            />
+            
+            {/* Spray Particles */}
+            <motion.div 
+              animate={{ opacity: [0, 1, 0], x: [-10, -30], y: [0, -10] }}
+              transition={{ repeat: Infinity, duration: 1.5, delay: 2 }}
+              className="absolute top-4 left-0 w-2 h-2 bg-blue-400 rounded-full blur-[1px]"
+            />
+            <motion.div 
+              animate={{ opacity: [0, 1, 0], x: [-15, -40], y: [5, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5, delay: 2.2 }}
+              className="absolute top-8 left-2 w-1.5 h-1.5 bg-blue-300 rounded-full blur-[1px]"
+            />
+            <motion.div 
+              animate={{ opacity: [0, 1, 0], x: [-5, -25], y: [-5, -15] }}
+              transition={{ repeat: Infinity, duration: 1.5, delay: 2.4 }}
+              className="absolute top-2 left-4 w-1 h-1 bg-blue-200 rounded-full blur-[1px]"
+            />
+          </motion.div>
         </div>
 
         {/* Services Grid */}
