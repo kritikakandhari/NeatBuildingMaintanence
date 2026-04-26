@@ -10,8 +10,11 @@ import { serviceCategories } from '../data/servicesData';
 const Home = () => {
   const [showGame, setShowGame] = useState(true);
 
+  const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
+
   return (
     <PageTransition>
+
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Parallax effect */}
@@ -202,12 +205,13 @@ const Home = () => {
               <motion.div 
                 key={step.id}
                 initial="initial"
-                whileInView="hover"
+                whileInView={isMobile ? "hover" : "initial"}
                 whileHover="hover"
                 viewport={{ once: true, amount: 0.8 }}
                 transition={{ delay: index * 0.1 }}
                 className="flex items-start gap-4 md:gap-8 relative cursor-pointer"
               >
+
 
 
                 {/* Process Circle */}
