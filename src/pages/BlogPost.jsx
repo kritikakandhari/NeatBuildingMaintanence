@@ -1,7 +1,8 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Clock, User, Share2, Bookmark } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Clock, User, Share2, Bookmark } from 'lucide-react';
+
 import PageTransition from '../components/PageTransition';
 import { blogPosts } from './Blog';
 
