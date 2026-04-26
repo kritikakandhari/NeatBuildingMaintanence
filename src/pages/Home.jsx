@@ -180,54 +180,51 @@ const Home = () => {
       </section>
 
       {/* How We Work Section - Vertical Timeline */}
-      <section className="py-24 bg-white relative">
+      <section className="py-16 bg-white relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-black text-[#0f2c59] mb-6">How We Work With You</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              From understanding your needs to delivering a spotless space, our structured approach ensures precision and quality at every step.
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black text-[#0f2c59] mb-4">How We Work With You</h2>
+            <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">
+              Our streamlined process ensures your space is spotless in no time.
             </p>
           </div>
           
-          <div className="relative space-y-12">
+          <div className="relative space-y-6 md:space-y-8">
             {/* Vertical Line */}
-            <div className="absolute left-10 md:left-12 top-10 bottom-10 w-[2px] bg-gray-100 hidden sm:block"></div>
+            <div className="absolute left-7 md:left-9 top-8 bottom-8 w-[2px] bg-gray-100 hidden sm:block"></div>
             
             {[
-              { id: '01', title: 'Consultation', desc: 'We listen. A quick conversation to understand your space, priorities, and specific requirements.' },
-              { id: '02', title: 'Strategy', desc: 'Custom planning. We select the right team members and specialized equipment for your unique environment.' },
-              { id: '03', title: 'Delivery', desc: 'Precision execution. Our professionals carry out the service with meticulous attention to detail and care.' },
-              { id: '04', title: 'Quality Check', desc: 'Continuous excellence. We perform a final walkthrough to ensure every corner meets our "Neat" standard.' }
+              { id: '01', title: 'Consultation', desc: 'A quick talk to understand your space and priorities.' },
+              { id: '02', title: 'Strategy', desc: 'Custom planning with the right team and equipment.' },
+              { id: '03', title: 'Delivery', desc: 'Meticulous execution with professional attention.' },
+              { id: '04', title: 'Review', desc: 'Final walkthrough to ensure every corner is "Neat".' }
             ].map((step, index) => (
               <motion.div 
                 key={step.id}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="flex items-start gap-8 md:gap-12 relative group"
+                transition={{ delay: index * 0.1 }}
+                className="flex items-start gap-4 md:gap-8 relative group cursor-pointer"
               >
                 {/* Process Circle */}
                 <div className="relative flex-shrink-0">
                   <motion.div 
-                    whileHover={{ scale: 1.1 }}
-                    className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-50 flex items-center justify-center border-2 border-gray-100 transition-all duration-500 group-hover:bg-primary/10 group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(30,184,130,0.2)]"
+                    whileHover={{ scale: 1.05 }}
+                    className="w-14 h-14 md:w-18 md:h-18 rounded-full bg-gray-50 flex items-center justify-center border-2 border-gray-100 transition-all duration-300 group-hover:bg-[#1eb882] group-hover:border-[#1eb882] shadow-sm group-hover:shadow-[0_0_15px_rgba(30,184,130,0.3)]"
                   >
-                    <span className="text-xl md:text-2xl font-black text-gray-400 group-hover:text-primary transition-colors">
+                    <span className="text-lg font-black text-gray-400 group-hover:text-white transition-colors">
                       {step.id}
                     </span>
                   </motion.div>
-                  
-                  {/* Outer Pulsing Ring (Visible on Hover) */}
-                  <div className="absolute inset-0 rounded-full border-4 border-primary/20 scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse"></div>
                 </div>
 
                 {/* Text Content */}
-                <div className="pt-4 md:pt-6">
-                  <h3 className="text-2xl md:text-3xl font-black text-dark mb-3 group-hover:text-primary transition-colors">
+                <div className="pt-2 md:pt-4">
+                  <h3 className="text-xl md:text-2xl font-black text-dark mb-1 group-hover:text-[#1eb882] transition-colors leading-tight">
                     {step.title}
                   </h3>
-                  <p className="text-lg text-gray-500 leading-relaxed max-w-xl">
+                  <p className="text-sm md:text-base text-gray-500 leading-snug max-w-lg">
                     {step.desc}
                   </p>
                 </div>
@@ -236,6 +233,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
 
 
       {/* Testimonials */}
