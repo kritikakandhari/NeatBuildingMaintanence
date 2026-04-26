@@ -103,8 +103,8 @@ const Services = () => {
                   Clean<br/>with open<br/>hearts <span className="inline-block text-blue-500">💙</span>
                 </h1>
                 
-                {/* Spray Hand Overlay - Positioned like 2nd SS */}
-                <div className="absolute -top-16 -right-24 z-30">
+                {/* Spray Hand Overlay - Moved further right */}
+                <div className="absolute -top-20 -right-32 lg:-right-40 z-30">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8, rotate: 20 }}
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
