@@ -230,7 +230,7 @@ const Home = () => {
               to="/contact" 
               className="inline-block bg-accent hover:bg-accent/90 text-dark px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
-              Get Your Free Estimate
+              Contact Us
             </Link>
           </motion.div>
         </div>
