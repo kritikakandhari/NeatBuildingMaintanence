@@ -83,85 +83,88 @@ const Blog = () => {
           </div>
 
 
-          {/* Featured Post */}
+          {/* Featured Post - Stylish Editorial Layout */}
           {featuredPost && (
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-24 group cursor-pointer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-32 group relative"
             >
-              <Link to={`/blog/${featuredPost.id}`} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-[2.5rem] shadow-2xl">
+              <Link to={`/blog/${featuredPost.id}`} className="block">
+                <div className="relative h-[500px] md:h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl">
                   <img 
                     src={featuredPost.image} 
                     alt={featuredPost.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                   />
-                  <div className="absolute top-8 left-8">
-                    <span className="bg-primary text-white px-6 py-2 rounded-full text-sm font-black uppercase tracking-widest">
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent"></div>
+                </div>
+                
+                {/* Overlapping Content Box */}
+                <div className="absolute -bottom-10 right-0 md:right-10 bg-white p-8 md:p-16 rounded-[2.5rem] shadow-2xl max-w-2xl border border-gray-100 group-hover:-translate-y-4 transition-transform duration-500">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="bg-primary/10 text-primary px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">
                       Featured Story
                     </span>
+                    <span className="text-gray-400 font-bold text-xs uppercase tracking-widest">{featuredPost.readTime}</span>
                   </div>
-                </div>
-                <div>
-                  <div className="flex items-center gap-4 text-gray-400 font-bold text-sm mb-6 uppercase tracking-widest">
-                    <span>{featuredPost.date}</span>
-                    <span className="w-2 h-2 rounded-full bg-primary/30"></span>
-                    <span>{featuredPost.readTime}</span>
-                  </div>
-                  <h2 className="text-4xl md:text-5xl font-black text-dark mb-6 leading-[1.1] group-hover:text-primary transition-colors">
+                  <h2 className="text-3xl md:text-5xl font-black text-dark mb-6 leading-tight tracking-tighter">
                     {featuredPost.title}
                   </h2>
-                  <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  <p className="text-gray-600 mb-8 leading-relaxed line-clamp-2">
                     {featuredPost.excerpt}
                   </p>
-                  <div className="inline-flex items-center text-primary font-black text-lg gap-2">
-                    Read the Full Story <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                  <div className="inline-flex items-center text-primary font-black text-lg gap-2 group/btn">
+                    Read Post <ArrowRight className="w-6 h-6 group-hover/btn:translate-x-2 transition-transform" />
                   </div>
                 </div>
               </Link>
             </motion.div>
           )}
 
-          {/* Grid for Other Posts */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          {/* Staggered Grid for Other Posts */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 mt-20 md:mt-40">
             {otherPosts.map((post, index) => (
               <motion.article 
                 key={post.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group cursor-pointer"
+                className={`group cursor-pointer ${index % 2 !== 0 ? 'md:mt-24' : ''}`}
               >
                 <Link to={`/blog/${post.id}`}>
-                  <div className="relative h-[350px] overflow-hidden rounded-[2rem] shadow-lg mb-8">
+                  <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-[2.5rem] shadow-xl mb-10 group-hover:shadow-2xl transition-all duration-500">
                     <img 
                       src={post.image} 
                       alt={post.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute top-6 left-6">
-                      <span className="bg-white/90 backdrop-blur-md text-dark px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
+                    <div className="absolute top-8 left-8">
+                      <span className="bg-white/95 backdrop-blur-md text-dark px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
                         {post.category}
                       </span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 text-gray-400 font-bold text-xs mb-4 uppercase tracking-wider">
-                    <span>{post.date}</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-200"></span>
-                    <span>{post.readTime}</span>
+                  <div className="px-4">
+                    <div className="flex items-center gap-4 text-gray-400 font-bold text-xs mb-6 uppercase tracking-widest">
+                      <span>{post.date}</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-gray-200"></span>
+                      <span>{post.readTime}</span>
+                    </div>
+                    <h3 className="text-3xl md:text-4xl font-black text-dark mb-6 leading-tight tracking-tighter group-hover:text-primary transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-lg text-gray-600 leading-relaxed line-clamp-3">
+                      {post.excerpt}
+                    </p>
                   </div>
-                  <h3 className="text-3xl font-black text-dark mb-4 leading-tight group-hover:text-primary transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed line-clamp-3">
-                    {post.excerpt}
-                  </p>
                 </Link>
               </motion.article>
             ))}
           </div>
+
 
           {/* Newsletter Section */}
           <div className="mt-32 bg-[#0f172a] rounded-[3rem] p-12 md:p-20 relative overflow-hidden">
