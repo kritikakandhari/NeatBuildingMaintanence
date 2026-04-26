@@ -210,14 +210,25 @@ const Home = () => {
                 {/* Process Circle */}
                 <div className="relative flex-shrink-0">
                   <motion.div 
-                    whileHover={{ scale: 1.05 }}
-                    className="w-14 h-14 md:w-18 md:h-18 rounded-full bg-gray-50 flex items-center justify-center border-2 border-gray-100 transition-all duration-300 group-hover:bg-[#1eb882] group-hover:border-[#1eb882] shadow-sm group-hover:shadow-[0_0_15px_rgba(30,184,130,0.3)]"
+                    whileHover={{ 
+                      scale: 1.05,
+                      backgroundColor: "#1eb882",
+                      borderColor: "#1eb882"
+                    }}
+                    transition={{ duration: 0.2 }}
+                    className="w-14 h-14 md:w-18 md:h-18 rounded-full bg-gray-50 flex items-center justify-center border-2 border-gray-100 shadow-sm transition-colors group"
                   >
-                    <span className="text-lg font-black text-gray-400 group-hover:text-white transition-colors">
+                    <motion.span 
+                      variants={{
+                        hover: { color: "#ffffff" }
+                      }}
+                      className="text-lg font-black text-gray-400 group-hover:text-white transition-colors"
+                    >
                       {step.id}
-                    </span>
+                    </motion.span>
                   </motion.div>
                 </div>
+
 
                 {/* Text Content */}
                 <div className="pt-2 md:pt-4">
