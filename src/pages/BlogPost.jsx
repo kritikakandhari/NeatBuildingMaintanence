@@ -63,47 +63,69 @@ const BlogPost = () => {
 
         {/* Article Body */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-xl prose-slate max-w-none prose-headings:font-black prose-headings:tracking-tighter prose-p:leading-relaxed prose-p:text-gray-600 prose-blockquote:border-primary prose-blockquote:bg-primary/5 prose-blockquote:p-8 prose-blockquote:rounded-3xl prose-blockquote:not-italic prose-blockquote:font-bold prose-blockquote:text-dark">
-            <p className="text-2xl md:text-3xl text-dark font-medium leading-normal mb-16 italic">
-              "{post.excerpt}"
+          <div className="relative">
+            {/* Decorative Side Quote Mark */}
+            <div className="absolute -left-12 top-0 text-primary/10 text-9xl font-serif select-none hidden lg:block">"</div>
+            
+            <p className="text-2xl md:text-4xl text-dark font-black leading-[1.3] mb-16 tracking-tight border-l-4 border-primary pl-8 py-2">
+              {post.excerpt}
             </p>
+          </div>
+
+          <div className="space-y-12 text-gray-700 text-lg md:text-xl leading-relaxed font-medium">
+
             
             {post.id === "spring-cleaning-tips" && (
               <>
-                <h2 className="text-3xl md:text-4xl">The Ritual of Renewal</h2>
+                <h2 className="text-3xl md:text-5xl font-black text-dark tracking-tighter leading-tight">The Ritual of Renewal</h2>
                 <p>
                   Spring isn't just a season; it's a state of mind. After months of closed windows and heavy winter layers, your home deserves to breathe. A proper spring clean goes beyond the surface—it's about clearing out the stagnant energy and hidden dust that accumulated during the cold months.
                 </p>
-                <h3 className="text-2xl">Phase 1: The Deep Declutter</h3>
-                <p>
-                  Before the first spray bottle is even opened, we recommend a total declutter. Go through your closets, pantry, and storage areas. If you haven't used it all winter, consider donating it. A clear space makes the actual cleaning much more effective.
-                </p>
-                <ul>
-                  <li><strong>Vertical Dusting:</strong> Start from the ceiling fans and work your way down to the baseboards.</li>
-                  <li><strong>Window Therapy:</strong> Clean both sides of the glass to let in maximum natural light.</li>
-                  <li><strong>Air Quality:</strong> Replace furnace filters and wash all heavy curtains.</li>
-                </ul>
-                <blockquote className="my-16">
-                  "A clean home is a foundation for a clear mind. When your environment is organized, your productivity and peace of mind follow naturally."
+                <div className="bg-gray-50 p-8 md:p-12 rounded-[2.5rem] border border-gray-100">
+                  <h3 className="text-2xl md:text-3xl font-black text-primary mb-6">Phase 1: The Deep Declutter</h3>
+                  <p className="mb-8">
+                    Before the first spray bottle is even opened, we recommend a total declutter. Go through your closets, pantry, and storage areas. If you haven't used it all winter, consider donating it.
+                  </p>
+                  <ul className="space-y-4">
+                    {[
+                      { t: 'Vertical Dusting', d: 'Start from the ceiling fans and work your way down to the baseboards.' },
+                      { t: 'Window Therapy', d: 'Clean both sides of the glass to let in maximum natural light.' },
+                      { t: 'Air Quality', d: 'Replace furnace filters and wash all heavy curtains.' }
+                    ].map((item, i) => (
+                      <li key={i} className="flex gap-4">
+                        <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs mt-1">✓</div>
+                        <p><span className="font-black text-dark">{item.t}:</span> {item.d}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <blockquote className="bg-primary text-white p-10 md:p-16 rounded-[3rem] text-2xl md:text-3xl font-black leading-tight italic shadow-2xl shadow-primary/20">
+                  "A clean home is a foundation for a clear mind. When your environment is organized, your peace of mind follows naturally."
                 </blockquote>
+
               </>
             )}
 
             {post.id === "benefits-of-commercial-cleaning" && (
               <>
-                <h2 className="text-3xl md:text-4xl">The ROI of a Spotless Office</h2>
+                <h2 className="text-3xl md:text-5xl font-black text-dark tracking-tighter leading-tight">The ROI of a Spotless Office</h2>
                 <p>
                   Most business owners view cleaning as an expense. We view it as an investment in your team's performance. A clean workspace reduces sick days, improves employee morale, and makes a powerful first impression on visiting clients.
                 </p>
-                <h3 className="text-2xl">Beyond the Visible Clean</h3>
-                <p>
-                  High-traffic areas like keyboards, door handles, and communal kitchens are breeding grounds for bacteria. Our commercial team uses hospital-grade disinfectants that are safe for office equipment but lethal for germs.
-                </p>
-                <ul>
-                  <li><strong>Productivity Boost:</strong> Employees focus better when their desks aren't covered in dust.</li>
-                  <li><strong>Longevity:</strong> Regular carpet and upholstery care saves thousands in replacement costs.</li>
-                  <li><strong>Professionalism:</strong> Your office is your brand's physical manifestation.</li>
-                </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {[
+                    { t: 'Productivity Boost', d: 'Employees focus better when their desks aren\'t covered in dust.' },
+                    { t: 'Cost Savings', d: 'Regular maintenance saves thousands in replacement costs.' },
+                    { t: 'Professionalism', d: 'Your office is your brand\'s physical manifestation.' },
+                    { t: 'Health First', d: 'Reduce sick days with hospital-grade sanitization.' }
+                  ].map((item, i) => (
+                    <div key={i} className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
+                      <h4 className="font-black text-primary mb-2 uppercase tracking-widest text-xs">{item.t}</h4>
+                      <p className="text-sm md:text-base">{item.d}</p>
+                    </div>
+                  ))}
+                </div>
+
               </>
             )}
 
