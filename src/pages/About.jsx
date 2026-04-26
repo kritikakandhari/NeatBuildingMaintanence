@@ -57,11 +57,12 @@ const About = () => {
               >
                 <div className="relative aspect-[4/5] rounded-[3.5rem] overflow-hidden shadow-2xl z-10">
                   <img 
-                    src="https://images.unsplash.com/photo-1581578731522-9b7d77a60663?q=80&w=1200&auto=format&fit=crop" 
+                    src="/blog/commercial.png" 
                     alt="Professional cleaning" 
                     className="w-full h-full object-cover"
                   />
                 </div>
+
                 {/* Decorative floating box */}
                 <motion.div 
                   animate={{ y: [0, -20, 0] }}
@@ -134,7 +135,7 @@ const About = () => {
               <div className="md:col-span-8">
                 <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-xl group">
                   <img 
-                    src="https://images.unsplash.com/photo-1521791136064-7986c2959443?q=80&w=1200&auto=format&fit=crop" 
+                    src="/blog/spring.png" 
                     alt="Our experts" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
@@ -146,7 +147,7 @@ const About = () => {
               <div className="md:col-span-4">
                 <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-xl group">
                   <img 
-                    src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop" 
+                    src="/blog/construction.png" 
                     alt="Cleaning detail" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
@@ -155,12 +156,13 @@ const About = () => {
               <div className="md:col-span-4">
                 <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-xl group">
                   <img 
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" 
+                    src="/blog/carpet.png" 
                     alt="Office cleaning" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
               </div>
+
               <div className="md:col-span-8 text-center bg-primary rounded-[3rem] p-12 flex flex-col justify-center items-center">
                 <h3 className="text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
                   Ready to experience <br /> the Neat difference?
