@@ -68,48 +68,108 @@ const BlogPost = () => {
               "{post.excerpt}"
             </p>
             
-            <h2 className="text-3xl md:text-4xl">The Foundation of a Clean Home</h2>
-            <p>
-              In today's fast-paced world, the state of our living environment often takes a backseat. However, study after study shows that a clean, organized space is directly linked to mental clarity and reduced stress levels. At Neat Maintenance, we've seen firsthand how a professional deep clean can transform not just a house, but the mood of everyone inside it.
-            </p>
-            
-            {post.contentImages && post.contentImages.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
-                {post.contentImages.map((img, idx) => (
-                  <div key={idx} className="rounded-[2rem] overflow-hidden h-80 shadow-lg">
-                    <img src={img} alt={`Content ${idx}`} className="w-full h-full object-cover" />
-                  </div>
-                ))}
-              </div>
+            {post.id === "spring-cleaning-tips" && (
+              <>
+                <h2 className="text-3xl md:text-4xl">The Ritual of Renewal</h2>
+                <p>
+                  Spring isn't just a season; it's a state of mind. After months of closed windows and heavy winter layers, your home deserves to breathe. A proper spring clean goes beyond the surface—it's about clearing out the stagnant energy and hidden dust that accumulated during the cold months.
+                </p>
+                <h3 className="text-2xl">Phase 1: The Deep Declutter</h3>
+                <p>
+                  Before the first spray bottle is even opened, we recommend a total declutter. Go through your closets, pantry, and storage areas. If you haven't used it all winter, consider donating it. A clear space makes the actual cleaning much more effective.
+                </p>
+                <ul>
+                  <li><strong>Vertical Dusting:</strong> Start from the ceiling fans and work your way down to the baseboards.</li>
+                  <li><strong>Window Therapy:</strong> Clean both sides of the glass to let in maximum natural light.</li>
+                  <li><strong>Air Quality:</strong> Replace furnace filters and wash all heavy curtains.</li>
+                </ul>
+                <blockquote className="my-16">
+                  "A clean home is a foundation for a clear mind. When your environment is organized, your productivity and peace of mind follow naturally."
+                </blockquote>
+              </>
             )}
 
-            <h2 className="text-3xl md:text-4xl">Why Professional Expertise Matters</h2>
-            <p>
-              Many of our clients ask, "What makes a professional clean different from my Saturday morning routine?" The answer lies in the details. It's the microscopic dust in the air ducts, the hidden buildup behind the appliances, and the specific pH-balanced solutions we use for different surfaces. 
-            </p>
-            <ul>
-              <li><strong>Meticulous Attention:</strong> We follow a 50-point checklist for every room.</li>
-              <li><strong>Advanced Technology:</strong> Using HEPA-filter vacuums that capture 99.9% of allergens.</li>
-              <li><strong>Sustainable Practice:</strong> Our proprietary green solutions are safe for your family and the planet.</li>
-            </ul>
+            {post.id === "benefits-of-commercial-cleaning" && (
+              <>
+                <h2 className="text-3xl md:text-4xl">The ROI of a Spotless Office</h2>
+                <p>
+                  Most business owners view cleaning as an expense. We view it as an investment in your team's performance. A clean workspace reduces sick days, improves employee morale, and makes a powerful first impression on visiting clients.
+                </p>
+                <h3 className="text-2xl">Beyond the Visible Clean</h3>
+                <p>
+                  High-traffic areas like keyboards, door handles, and communal kitchens are breeding grounds for bacteria. Our commercial team uses hospital-grade disinfectants that are safe for office equipment but lethal for germs.
+                </p>
+                <ul>
+                  <li><strong>Productivity Boost:</strong> Employees focus better when their desks aren't covered in dust.</li>
+                  <li><strong>Longevity:</strong> Regular carpet and upholstery care saves thousands in replacement costs.</li>
+                  <li><strong>Professionalism:</strong> Your office is your brand's physical manifestation.</li>
+                </ul>
+              </>
+            )}
 
-            <blockquote className="my-16">
-              "We don't just clean for the eyes; we clean for the lungs. A truly clean space is one where you can breathe easy, knowing every surface has been sanitized with care."
-            </blockquote>
+            {post.id === "eco-friendly-cleaning-products" && (
+              <>
+                <h2 className="text-3xl md:text-4xl">Effective, Ethical, and Essential</h2>
+                <p>
+                  The myth that "chemical-heavy" means "more clean" is finally dying. Modern plant-based cleaning solutions are just as effective as their traditional counterparts, without the respiratory irritants and environmental impact.
+                </p>
+                <h3 className="text-2xl">Why We Choose Green</h3>
+                <p>
+                  At Neat Maintenance, we use proprietary blends of citrus-based degreasers and enzyme-powered cleaners. They are safe for pets, children, and those with sensitive skin.
+                </p>
+                <ul>
+                  <li><strong>No VOCs:</strong> Volatile Organic Compounds can linger in the air for days. We avoid them entirely.</li>
+                  <li><strong>Biodegradable:</strong> What goes down the drain shouldn't harm our waterways.</li>
+                  <li><strong>Hypoallergenic:</strong> Breathe easy knowing no harsh residues are left behind.</li>
+                </ul>
+              </>
+            )}
 
-            <h2 className="text-3xl md:text-4xl">Creating a Sustainable Routine</h2>
-            <p>
-              Once your space is professionally cleaned, maintaining it becomes much easier. We recommend a simple '15-minute daily reset' to keep the clutter at bay between our visits. Focusing on high-traffic areas like the kitchen counters and the entryway can make a world of difference in how your home feels day-to-day.
-            </p>
+            {post.id === "post-construction-cleaning" && (
+              <>
+                <h2 className="text-3xl md:text-4xl">The Final Stage of Your Renovation</h2>
+                <p>
+                  The contractors have left, and the paint is dry. But look closely—there's a fine layer of white dust over everything. Construction dust is notorious for its ability to hide in vents, light fixtures, and inside cabinets. 
+                </p>
+                <h3 className="text-2xl">The 3-Pass Method</h3>
+                <p>
+                  A standard cleaning isn't enough. We use a three-pass system: the Rough Clean (removing large debris), the Deep Clean (detailed scrubbing), and the Final Polish (ensuring a move-in ready shine).
+                </p>
+                <ul>
+                  <li><strong>HEPA Filtration:</strong> Standard vacuums just blow dust back out. We use industrial HEPA filters.</li>
+                  <li><strong>Surface Safety:</strong> Freshly installed marble or wood requires specific, non-abrasive care.</li>
+                  <li><strong>Air Duct Purge:</strong> Cleaning the filters and vents is the only way to stop the dust from returning.</li>
+                </ul>
+              </>
+            )}
+
+            {post.id === "carpet-maintenance-secrets" && (
+              <>
+                <h2 className="text-3xl md:text-4xl">Protecting Your Investment</h2>
+                <p>
+                  Carpeting is one of the most expensive elements of your interior. Most people wait until they see a stain to call a professional, but by then, the fibers may already be damaged by abrasive dirt.
+                </p>
+                <h3 className="text-2xl">The Science of Carpet Wear</h3>
+                <p>
+                  Dirt acts like tiny knives, cutting into carpet fibers every time someone walks over them. Regular steam cleaning (Hot Water Extraction) is the only way to remove these abrasive particles from the deep pile.
+                </p>
+                <ul>
+                  <li><strong>The 'No Shoe' Rule:</strong> 80% of carpet dirt comes from the outdoors.</li>
+                  <li><strong>Immediate Spot Care:</strong> Blot, never rub. We'll show you how.</li>
+                  <li><strong>Annual Deep Clean:</strong> Essential for maintaining your carpet's warranty and texture.</li>
+                </ul>
+              </>
+            )}
 
             <div className="my-16 p-10 bg-gray-50 rounded-[3rem] border border-gray-100 text-center">
-              <h3 className="text-2xl font-black mb-4">Interested in a deep clean?</h3>
+              <h3 className="text-2xl font-black mb-4">Interested in a professional touch?</h3>
               <p className="text-gray-500 mb-8">Get a customized quote for your home or office in less than 2 minutes.</p>
               <Link to="/contact" className="inline-block bg-primary text-white px-10 py-4 rounded-full font-black shadow-lg hover:shadow-xl transition-all">
                 Get a Free Quote
               </Link>
             </div>
           </div>
+
 
           {/* Related Posts */}
           <div className="mt-32 pt-20 border-t border-gray-100">
